@@ -16,11 +16,11 @@ namespace AndersesCrappyProjectFinal1
 
         int tg = 1;
 
-        int startX = 0;
-        int startY = 0;
+        int startVelocityX = 0;
+        int startVelocityY = 0;
 
-        int x = 0;
-        int y = 0;
+        int projectilePosX = 0;
+        int projectilePosY = 0;
 
         int v1 = 0;
         int v2 = 0;
@@ -45,16 +45,16 @@ namespace AndersesCrappyProjectFinal1
 
             Console.WriteLine("Så er vi igang??" + x + " " + y);
 
-            startX = x;
-            startY = y;
+            startVelocityX = x;
+            startVelocityY = y;
 
-            label3.Text = "Position Projektil" + this.x + "," + this.y;
+            label3.Text = "Position Projektil" + this.projectilePosX + "," + this.projectilePosY;
 
 
             if (!s)
             {
-                this.v1 = startX;
-                this.v2 = startY;
+                this.v1 = startVelocityX;
+                this.v2 = startVelocityY;
             }
 
             if (s)
@@ -63,20 +63,20 @@ namespace AndersesCrappyProjectFinal1
                 v1 = v1;
                 v2 = v2 - tg;
 
-                if (this.y > 0)
+                if (this.projectilePosY > 0)
                 {
-                    this.x = this.x + v1;
-                    this.y = this.y + v2;
+                    this.projectilePosX = this.projectilePosX + v1;
+                    this.projectilePosY = this.projectilePosY + v2;
                 }
 
                 if (y <= 0)
                 {
-                    this.y = 0;
+                    this.projectilePosY = 0;
                 }
 
             }
 
-            if (Math.Sqrt((this.x - 100) * (this.x - 100) + this.y * this.y) <= 4)
+            if (Math.Sqrt((this.projectilePosX - 100) * (this.projectilePosX - 100) + this.projectilePosY * this.projectilePosY) <= 4)
             {
                 label4.Text = "TARGET DESTROYED!!";
 
@@ -95,16 +95,16 @@ namespace AndersesCrappyProjectFinal1
 
             if (!s)
             {
-                v1 = startX;
-                v2 = startY;
+                v1 = startVelocityX;
+                v2 = startVelocityY;
             }
 
             s = true;
 
             v2 = v2 - tg;
 
-            x = x + v1;
-            y = y + v2;
+            projectilePosX = projectilePosX + v1;
+            projectilePosY = projectilePosY + v2;
 
         }
 
@@ -117,11 +117,11 @@ namespace AndersesCrappyProjectFinal1
         {
             s = false;
 
-            startX = 0;
-            startY = 0;
+            startVelocityX = 0;
+            startVelocityY = 0;
 
-            x = 0;
-            y = 0;
+            projectilePosX = 0;
+            projectilePosY = 0;
 
             v1 = 0;
             v2 = 0;
