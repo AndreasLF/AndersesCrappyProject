@@ -25,7 +25,7 @@ namespace AndersesCrappyProjectFinal1
         int v1 = 0;
         int v2 = 0;
 
-        Boolean s = false;
+        Boolean fireButtonPressed = false;
 
 
         public Form1()
@@ -51,13 +51,13 @@ namespace AndersesCrappyProjectFinal1
             label3.Text = "Position Projektil" + this.projectilePosX + "," + this.projectilePosY;
 
 
-            if (!s)
+            if (!fireButtonPressed)
             {
                 this.v1 = startVelocityX;
                 this.v2 = startVelocityY;
             }
 
-            if (s)
+            if (fireButtonPressed)
             {
 
                 v1 = v1;
@@ -93,13 +93,13 @@ namespace AndersesCrappyProjectFinal1
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (!s)
+            if (!fireButtonPressed)
             {
                 v1 = startVelocityX;
                 v2 = startVelocityY;
             }
 
-            s = true;
+            fireButtonPressed = true;
 
             v2 = v2 - tg;
 
@@ -115,7 +115,7 @@ namespace AndersesCrappyProjectFinal1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            s = false;
+            fireButtonPressed = false;
 
             startVelocityX = 0;
             startVelocityY = 0;
