@@ -12,7 +12,7 @@ namespace AndersesCrappyProjectFinal1
 {
     public partial class Form1 : Form
     {
-        Timer t = new Timer();
+        Timer gameTimer = new Timer();
 
         int tg = 1;
 
@@ -32,9 +32,9 @@ namespace AndersesCrappyProjectFinal1
         {
             InitializeComponent();
 
-            t.Interval = 1000;
-            t.Tick += new EventHandler(this.m);
-            t.Enabled = true;
+            gameTimer.Interval = 1000;
+            gameTimer.Tick += new EventHandler(this.m);
+            gameTimer.Enabled = true;
 
         }
 
