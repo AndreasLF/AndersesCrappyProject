@@ -33,12 +33,12 @@ namespace AndersesCrappyProjectFinal1
             InitializeComponent();
 
             gameTimer.Interval = 1000;
-            gameTimer.Tick += new EventHandler(this.m);
+            gameTimer.Tick += new EventHandler(this.gameLoop);
             gameTimer.Enabled = true;
 
         }
 
-        private void m(object sender, EventArgs e)
+        private void gameLoop(object sender, EventArgs e)
         {
             int x = Convert.ToInt32(Math.Sin(Math.PI * Double.Parse(textBox1.Text) / 180) * Int32.Parse(textBox2.Text));
             int y = Convert.ToInt32(Math.Cos(Math.PI * Double.Parse(textBox1.Text) / 180) * Int32.Parse(textBox2.Text));
